@@ -1,10 +1,12 @@
 # telltime
-Deutsch: Gibt jede Viertelstunde die Uhrzeit, per Sprachausgabe, an.
-English: Outputs the time every quarter of an hour by voice output.
+Outputs the time every quarter of an hour by voice output.
 
 
 ENGLISH VERSION BELOW
 
+## Beschreibung
+
+   Gibt jede Viertelstunde die Uhrzeit, per Sprachausgabe, aus.
 
 ## Installationsvorraussetzungen
    
@@ -40,6 +42,9 @@ ENGLISH VERSION BELOW
 	 da nur dafür Sprachdateien erstellt wurden.
 
 -------------------------------------
+
+## description
+   Outputs the time every quarter of an hour by voice output.
 
 ## install requirements
    
