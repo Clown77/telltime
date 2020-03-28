@@ -15,8 +15,8 @@ ENGLISH VERSION BELOW
 
 ## Installation
 
-    - python3 (sudo apt-get install python3)
-    - gTTS (pip3 install gTTS)
+    - git clone https://github.com/Clown77/telltime.git
+    - python3 install.py -l de
 
 #### Eintrag zu cron hinzufügen
 	 
@@ -54,7 +54,7 @@ ENGLISH VERSION BELOW
 ## installation
 
     - git clone https://github.com/Clown77/telltime.git
-    - python3 install.py
+    - python3 install.py -l en
 
 #### add entry to cron
 
