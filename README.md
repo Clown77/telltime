@@ -36,7 +36,8 @@ ENGLISH VERSION BELOW
 	 Every other solution to call the script is also possible, all it needs is
 	 to call the 'tell_time.sh' script.
 
-	 Es ist jedoch notwendig das Skript exakt jede Viertelstunde aufzurufen, da nur dafür Sprachdateien erstellt wurden.
+	 Es ist jedoch notwendig das Skript exakt jede Viertelstunde aufzurufen,
+	 da nur dafür Sprachdateien erstellt wurden.
 
 -------------------------------------
 
@@ -67,7 +68,8 @@ ENGLISH VERSION BELOW
 
 #### or use another solution to call the script
 
-	Other solutions can also be chosen to call the script. Only the script 'tell_time.sh' must be called for the output.
+	Other solutions can also be chosen to call the script.
+	Only the script 'tell_time.sh' must be called for the output.
 
 	However, it is necessary to call the script exaclty every quarter of an
 	hour, because only for these times language files were created.
