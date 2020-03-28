@@ -1,2 +1,2 @@
 # telltime
-Indicates the time every quarter of an hour by voice output.
+Outputs the time every quarter of an hour by voice output.
