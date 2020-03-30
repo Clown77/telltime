@@ -25,14 +25,14 @@ def create_language_files(sprache):
     for hour in range(25):
         ansage = time_without_minutes.format(hour)
         tts = gTTS(ansage, lang=sprache)
-        filename = str(hour)+"_00.mp3"
+        filename = str(hour).zfill(2)+"_00.mp3"
         output_file = os.path.join(folderpath, filename)
         tts.save(output_file)
 
         for minute in minuten:
             ansage = time_with_minutes.format(hour, minute)
             tts = gTTS(ansage, lang=sprache)
-            filename = str(hour)+"_"+str(minute)+".mp3"
+            filename = str(hour).zfill(2)+"_"+str(minute)+".mp3"
             output_file = os.path.join(folderpath, filename)
             tts.save(output_file)
 
