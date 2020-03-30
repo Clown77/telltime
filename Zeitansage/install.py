@@ -3,21 +3,33 @@ import json
 from argparse import ArgumentParser
 from gtts import gTTS
 
+
+LANG = {
+    "de": {
+        "folder_name": "Sprachdateien",
+        "time_without_minutes": "Es ist {} Uhr.",
+        "time_with_minutes": "Es ist {} Uhr {}."
+    },
+    "en": {
+        "folder_name": "language_files",
+        "time_without_minutes": "It's {}.",
+        "time_with_minutes": "It's {}:{}."
+    }
+}
+
+
+
 def create_language_files(sprache):
     """
     Reads relevant information from the language file and
     uses google text to speech to create the language files.
     """
-    language_file = os.path.join("languages", sprache+".json")
-
-    with open(language_file, 'r') as json_file:
-        json_object = json.loads(json_file.read())
 
     minuten = [15, 30, 45]
-    foldername = json_object["folder_name"]
+    foldername = LANG[sprache]["folder_name"]
     folderpath = os.path.join(os.getcwd(), foldername) # folder for the output files
-    time_without_minutes = json_object["time_without_minute"]
-    time_with_minutes = json_object["time_with_minute"]
+    time_without_minutes = LANG[sprache]["time_without_minutes"]
+    time_with_minutes = LANG[sprache]["time_with_minutes"]
 
     if not os.path.exists(folderpath):
         os.mkdir(folderpath)
@@ -41,12 +53,7 @@ def create_script_file(sprache):
     """
     Creates the script which is later called via cron.
     """
-    language_file = os.path.join("languages", sprache+".json")
-
-    with open(language_file, 'r') as json_file:
-        json_object = json.loads(json_file.read())
-
-    language_folder = json_object["folder_name"]
+    language_folder = LANG[sprache]["folder_name"]
 
     with open("tell_time.sh", 'w') as file_script:
         file_script.write("#!/bin/sh\n\n")
@@ -54,7 +61,7 @@ def create_script_file(sprache):
         file_script.write("minute=$(date +\"%M\")\n\n")
         file_script.write("file=${hour}_${minute}.mp3\n")
         file_script.write(f"language_folder={language_folder}\n")
-        file_script.write("ffplay -nodisp -autoexit Sprachdateien/$file")
+        file_script.write("ffplay -nodisp -autoexit ${language_folder}/$file")
 
 
 
@@ -65,4 +72,4 @@ if __name__ == '__main__':
     ARGS = PARSER.parse_args()
 
     create_script_file(ARGS.LANGUAGE)
-    #create_language_files(ARGS.LANGUAGE)
+    create_language_files(ARGS.LANGUAGE)
